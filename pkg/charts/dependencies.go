@@ -265,7 +265,7 @@ func UpdateHelmMetadataWithDependencies(fs billy.Filesystem, mainHelmChartPath s
 			d := &helmChart.Dependency{
 				Name:       dependencyName,
 				Condition:  fmt.Sprintf("%s.enabled", dependencyName),
-				Version:    "", // Local chart archives don't need a version
+				//Version:    "", // Local chart archives don't need a version
 				Repository: fmt.Sprintf("file://./charts/%s", dependencyName),
 			}
 			chart.Metadata.Dependencies = append(chart.Metadata.Dependencies, d)
